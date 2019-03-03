@@ -1,0 +1,42 @@
+@import './base.less';
+
+#main {
+    display: flex;
+    background-color: #eee;
+
+    .category-left {
+        width: .8rem;
+
+        li {
+            &.active {
+                background-color: #eee;
+            }
+        }
+
+        .mui-table-view-cell:after {
+            // 去掉mui模板给分隔线伪元素添加的样式
+            left: 0;
+        }
+    }
+
+    .category-right {
+        flex: 1;
+        padding: .1rem;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            a {
+                display: block;
+                text-align: center;
+                background-color: #fff;
+
+                img {
+                    width: 100%;
+                    height: .5rem;
+                }
+            }
+        }
+    }
+}

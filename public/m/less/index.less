@@ -1,0 +1,47 @@
+@import './base.less';
+
+#main {
+    a {
+        display: block;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    // 导航 品牌 运动 女士 男士专区 使用并集选择器
+    .nav,
+    .brand,
+    .sport,
+    .women,
+    .man {
+        padding: .1rem;
+    }
+
+    // 广告区域
+    .banner {
+        padding: .1rem;
+
+        .left {
+            a {
+                // 这里不用block是因为a转块后, img是行内块, 标签不放在一行会有间隙
+                display: flex;
+
+                img {
+                    width: 50%;
+                    height: 1.2rem;
+                }
+            }
+        }
+
+        .right {
+            a {
+                img {
+                    height: 2.4rem;
+                }
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘移动端主页</title>
+    <!-- MUI框架 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/category.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <form>
+                <input type="search" placeholder="请输入要搜索的商品">
+            </form>
+        </div>
+        <div class="right">
+            <a class="fa fa-search" href="search.html"></a>
+        </div>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="category-left">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell active">运动馆</li>
+                        <li class="mui-table-view-cell">女士馆</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="category-right">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="mui-row">
+                        <li class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="/mobile/images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 页尾区域 -->
+    <footer id="footer">
+        <ul class="mui-row">
+            <li class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="category.html" class="active">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- 左侧分类的模板 -->
+    <script id="categoryLeftTpl" type="text/html">
+        {{each rows value i}}
+            <!-- active类只给第一个加, 三元运算判断i索引是否是第一个 i == 0 返回active 否则返回空 -->
+            <!-- 点击要获取li的id, 通过data-自定义属性在标签中绑定id -->
+            <li class="mui-table-view-cell {{i == 0 ? 'active' : ''}}" data-id="{{value.id}}">{{value.categoryName}}</li>
+        {{/each}}
+    </script>
+
+    <!-- 右侧品牌的模板 -->
+    <script id="categoryRightTpl" type="text/html">
+        <!-- 判断如果需要遍历的数组长度大于0, 也就是数据才执行遍历 -->
+        {{if rows.length > 0}}
+        {{each rows value i}}
+            <div class="mui-col-xs-4">
+                <a href="#">
+                    <img src="{{value.brandLogo}}" alt="">
+                    <p>{{value.brandName}}</p>
+                </a>
+            </div>
+        {{/each}}
+        {{else}}
+            <p>该分类下暂无品牌数据</p>
+        {{/if}}
+    </script>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- zepto,移动端的JQ -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/category.js"></script>
+</body>
+
+</html>
