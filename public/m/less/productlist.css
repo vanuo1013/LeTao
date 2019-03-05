@@ -120,16 +120,31 @@ img {
 #footer ul a.active {
   color: orange;
 }
-.search-history .mui-card-header span {
-  font-size: .14rem;
-}
-.search-history .mui-card-header a {
+#main .product-list .mui-card-header a {
   font-size: .14rem;
   color: #666;
+  text-align: center;
 }
-.search-history .mui-card-content {
-  height: 4.7rem;
+#main .product-list .mui-card-header a.active {
+  color: red;
 }
-.search-history .mui-table-view-cell:after {
-  left: 0;
+#main .product-list .mui-card-content .mui-col-xs-6 {
+  box-shadow: 0 1px 0 #ccc;
+}
+#main .product-list .mui-card-content .mui-col-xs-6:nth-child(odd) {
+  box-shadow: 1px 1px 0 #ccc;
+}
+#main .product-list .mui-card-content .product {
+  text-align: center;
+  padding: .1rem .05rem;
+}
+#main .product-list .mui-card-content .product .product-img {
+  width: 100%;
+}
+#main .product-list .mui-card-content .product .product-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }

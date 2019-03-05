@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>乐淘移动端主页</title>
+    <title>搜索中心</title>
     <!-- MUI框架 -->
     <link rel="stylesheet" href="./lib/mui/css/mui.css">
     <!-- 字体图标 -->
@@ -20,17 +20,41 @@
             <a href="#" class="fa fa-arrow-left"></a>
         </div>
         <div class="center">
-            <form>
-                <input type="search" placeholder="请输入要搜索的商品">
-            </form>
+            <h4>搜索中心</h4>
         </div>
-        <div class="right">
-            <a class="fa fa-search" href="search.html"></a>
-        </div>
+        <div class="right"></div>
     </header>
     <!-- 主体区域 -->
     <main id="main">
-
+        <form action="#" class="search-form">
+            <input type="text" class="input-search" placeholder="请输入要搜索的商品">
+            <button type="button" class="mui-btn mui-btn-primary btn-search">搜索</button>
+        </form>
+        <div class="search-history">
+            <div class="mui-card">
+                <div class="mui-card-header">
+                    <span>搜索历史</span>
+                    <a href="#" class="fa fa-trash btn-clear">清空记录</a>
+                </div>
+                <div class="mui-card-content">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <ul class="mui-table-view">
+                                <li class="mui-table-view-cell">Item 1
+                                    <span class="mui-badge fa fa-close btn-delete"></span>
+                                </li>
+                                <li class="mui-table-view-cell">Item 2
+                                    <span class="mui-badge fa fa-close btn-delete"></span>
+                                </li>
+                                <li class="mui-table-view-cell">Item 3
+                                    <span class="mui-badge fa fa-close btn-delete"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- 页尾区域 -->
     <footer id="footer">
@@ -61,6 +85,21 @@
             </li>
         </ul>
     </footer>
+
+    <!-- 创建搜索历史的模板引擎 -->
+    <script id="searchHistoryTpl" type="text/html">
+        <!-- 如果数组有长度就遍历生成列表, 没有就显示没有 -->
+        {{if list.length > 0}}
+            {{each list value i}}
+                <li class="mui-table-view-cell">{{value.key}}
+                    <!-- 将每个搜索历史的下标绑在自定义属性里, 删除的时候好获取 -->
+                    <span class="mui-badge fa fa-close btn-delete" data-index="{{i}}"></span>
+                </li>
+            {{/each}}
+            {{else}}
+                <li class="mui-table-view-cell">暂无搜索记录</li>
+            {{/if}}
+    </script>
 
     <script src="./lib/mui/js/mui.js"></script>
     <!-- zepto,移动端的JQ -->

@@ -69,6 +69,29 @@ img {
 #main .mui-scroll-wrapper .mui-scroll {
   min-height: 100.1%;
 }
+#main .search-form {
+  margin: .1rem;
+  display: flex;
+}
+#main .search-form input {
+  flex: 1;
+  height: .34rem;
+  border: 1px solid #006699;
+  border-radius: .06rem 0 0 .06rem;
+  margin-bottom: 0;
+  font-size: .14rem;
+}
+#main .search-form button {
+  width: .6rem;
+  height: .34rem;
+  background-color: #006699;
+  border-color: #006699;
+  border-radius: 0 .06rem .06rem 0;
+}
+#main .search-form button:active {
+  background-color: #006699;
+  border-color: #006699;
+}
 #footer {
   position: fixed;
   bottom: 0;

@@ -1,2 +1,24 @@
 @import './base.less';
 
+// 搜索历史样式
+.search-history {
+    .mui-card-header {
+        span {
+            font-size: .14rem;
+        }
+
+        a {
+            font-size: .14rem;
+            color: #666;
+        }
+    }
+
+    .mui-card-content {
+        height: 4.7rem;
+    }
+
+    // 每条搜索历史之间的分割线是框架用伪元素做的
+    .mui-table-view-cell:after {
+        left: 0;
+    }
+}

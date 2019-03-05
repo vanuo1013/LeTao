@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品列表</title>
+    <!-- MUI框架 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/productlist.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <h4>商品列表</h4>
+        </div>
+        <div class="right"></div>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div id="pullrefresh" class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form action="#" class="search-form">
+                    <input type="text" class="input-search" placeholder="请输入要搜索的商品">
+                    <button type="button" class="mui-btn mui-btn-primary btn-search">搜索</button>
+                </form>
+                <div class="product-list">
+                    <div class="mui-card">
+                        <div class="mui-card-header">
+                            <a href="#" data-type="time" data-sort="2">上架时间
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <a href="#" data-type="price" data-sort="2" class="active">价格
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <a href="#" data-type="num" data-sort="2">销量
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <a href="#" data-type="discount" data-sort="2">折扣
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                        </div>
+                        <div class="mui-card-content">
+                            <div class="mui-row">
+                                <div class="mui-col-xs-6">
+                                    <!-- 商品容器 -->
+                                    <div class="product">
+                                        <img src="/mobile/images/brand3.png" alt="" class="product-img">
+                                        <p class="product-name">
+                                            李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋
+                                        </p>
+                                        <p class="product-price">
+                                            <span>￥888.99</span>
+                                            <del>￥999.99</del>
+                                        </p>
+                                        <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                    </div>
+                                </div>
+                                <div class="mui-col-xs-6">
+                                    <!-- 商品容器 -->
+                                    <div class="product">
+                                        <img src="/mobile/images/brand3.png" alt="" class="product-img">
+                                        <p class="product-name">
+                                            李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋
+                                        </p>
+                                        <p class="product-price">
+                                            <span>￥888.99</span>
+                                            <del>￥999.99</del>
+                                        </p>
+                                        <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 页尾区域 -->
+    <footer id="footer">
+        <ul class="mui-row">
+            <li class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="category.html" class="active">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- zepto,移动端的JQ -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/productlist.js"></script>
+</body>
+
+</html>

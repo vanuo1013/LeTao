@@ -82,9 +82,38 @@ img {
         // mui会自行添加一些样式, 不需要的话要手动覆盖回来
         position: relative;
         height: 100%;
+
         .mui-scroll {
             // 加上最小高度超过父元素一点, 这样内容不够滚动的时候也能触发弹簧效果
             min-height: 100.1%;
+        }
+    }
+
+    // 搜索栏样式
+    .search-form {
+        margin: .1rem;
+        display: flex;
+
+        input {
+            flex: 1;
+            height: .34rem;
+            border: 1px solid @main-color;
+            border-radius: .06rem 0 0 .06rem;
+            margin-bottom: 0;
+            font-size: .14rem;
+        }
+
+        button {
+            width: .6rem;
+            height: .34rem;
+            background-color: @main-color;
+            border-color: @main-color;
+            border-radius: 0 .06rem .06rem 0;
+
+            &:active {
+                background-color: @main-color;
+                border-color: @main-color;
+            }
         }
     }
 }
