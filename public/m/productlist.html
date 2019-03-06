@@ -53,21 +53,7 @@
                                 <div class="mui-col-xs-6">
                                     <!-- 商品容器 -->
                                     <div class="product">
-                                        <img src="/mobile/images/brand3.png" alt="" class="product-img">
-                                        <p class="product-name">
-                                            李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋
-                                        </p>
-                                        <p class="product-price">
-                                            <span>￥888.99</span>
-                                            <del>￥999.99</del>
-                                        </p>
-                                        <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
-                                    </div>
-                                </div>
-                                <div class="mui-col-xs-6">
-                                    <!-- 商品容器 -->
-                                    <div class="product">
-                                        <img src="/mobile/images/brand3.png" alt="" class="product-img">
+                                        <img src="/mobile/images/detail.jpg" alt="" class="product-img">
                                         <p class="product-name">
                                             李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋
                                         </p>
@@ -114,7 +100,25 @@
             </li>
         </ul>
     </footer>
-
+    
+    <!-- 创建搜索历史的模板引擎 -->
+    <script id="productListTpl" type="text/html">
+        {{each data value}}
+            <div class="mui-col-xs-6">
+                <div class="product">
+                    <img src="{{value.pic[0].picAddr}}" alt="" class="product-img">
+                    <p class="product-name">
+                        {{value.proName}}
+                    </p>
+                    <p class="product-price">
+                        <span>￥{{value.price}}</span>
+                        <del>￥{{value.oldPrice}}</del>
+                    </p>
+                    <button type="button" class="mui-btn mui-btn-primary product-buy" data-id="{{value.id}}">立即购买</button>
+                </div>
+            </div>
+        {{/each}}
+    </script>
 
     <script src="./lib/mui/js/mui.js"></script>
     <!-- zepto,移动端的JQ -->

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+    <!-- MUI框架 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/detail.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <h4>商品详情</h4>
+        </div>
+        <div class="right">
+            <a class="fa fa-home" href="index.html"></a>
+        </div>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!-- 轮播图 -->
+                <section id="slide" class="mui-slider">
+                    <div class="mui-slider-group mui-slider-loop">
+                        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner4.png"></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner1.png"></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner2.png"></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner3.png"></a></div>
+                        <div class="mui-slider-item"><a href="#"><img src="./images/banner4.png"></a></div>
+                        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner1.png"></a></div>
+                    </div>
+                    <!-- 小圆点 -->
+                    <div class="mui-slider-indicator">
+                        <div class="mui-indicator mui-active"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                    </div>
+                </section>
+                <section id="detail-list">
+                    
+                </section>
+            </div>
+        </div>
+    </main>
+    <!-- 页尾区域 -->
+    <footer id="footer">
+
+    </footer>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- zepto,移动端的JQ -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/detail.js"></script>
+</body>
+
+</html>

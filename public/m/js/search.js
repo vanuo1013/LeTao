@@ -3,9 +3,10 @@ $(function () {
     addHistory();
     queryHistory();
     deleteHistory();
+    addSearch();
     clearHistory();
 
-    // 添加历史记录
+    // 添加历史记录并搜索商品
     function addHistory() {
         // 给搜索按钮添加无延迟的点击事件
         $('.btn-search').on('tap', function () {
@@ -55,7 +56,9 @@ $(function () {
             queryHistory();
             // 添加完成后清空输入框
             $('.input-search').val('');
-
+            // 保存搜索记录的同时需要跳转到相应的商品列表, 因此需要通过拼接url传递过去搜索内容
+            // 为了防止页面缓存多传一个时间参数, 这样页面url就每次不同, 请求时不会使用缓存页面
+            location = 'productlist.html?search='+search+'&time='+new Date().getTime();
         })
     }
 
@@ -96,6 +99,17 @@ $(function () {
         })
     }
 
+    // 点击历史纪录自动填充到搜索栏
+    function addSearch () {
+        // 历史记录是页面加载后才渲染的, 因此需要委托注册事件
+        $('.search-history ul').on('tap','li',function () {
+            // 通过自定义属性获取当前点击的记录内容
+            var search = $(this).data('search');
+            // 赋值给搜索框
+            $('.input-search').val(search);
+        })
+    }
+
     // 清空历史记录
     function clearHistory() {
         $('.btn-clear').on('tap', function () {
@@ -104,6 +118,8 @@ $(function () {
             localStorage.removeItem('searchHistory');
             // 在添加完成后调用查询函数就会渲染刷新出新数据了, 省事但耗性能
             queryHistory();
+            // 清空滚动的位移效果
+            $('.mui-scroll').css('transform','none')
         })
     }
 

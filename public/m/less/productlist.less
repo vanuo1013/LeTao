@@ -3,6 +3,7 @@
 #main {
     .product-list {
         .mui-card-header {
+            background-color: #eee;
             a {
                 font-size: .14rem;
                 color: #666;
@@ -16,16 +17,13 @@
 
         .mui-card-content {
             .mui-col-xs-6 {
-                box-shadow: 0 1px 0 #ccc;
-
-                &:nth-child(odd) {
-                    box-shadow: 1px 1px 0 #ccc;
-                }
+                // 这里用边框会占据位置, 挤到边上的盒子, 用盒阴影则不会
+                box-shadow: 1px 1px 0 #ccc;
             }
 
             .product {
                 text-align: center;
-                padding: .1rem .05rem;
+                padding: .1rem .1rem;
 
                 .product-img {
                     width: 100%;

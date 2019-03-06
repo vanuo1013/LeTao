@@ -91,7 +91,7 @@
         <!-- 如果数组有长度就遍历生成列表, 没有就显示没有 -->
         {{if list.length > 0}}
             {{each list value i}}
-                <li class="mui-table-view-cell">{{value.key}}
+                <li class="mui-table-view-cell" data-search="{{value.key}}">{{value.key}}
                     <!-- 将每个搜索历史的下标绑在自定义属性里, 删除的时候好获取 -->
                     <span class="mui-badge fa fa-close btn-delete" data-index="{{i}}"></span>
                 </li>
