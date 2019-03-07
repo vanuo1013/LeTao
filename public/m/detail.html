@@ -34,11 +34,9 @@
                 <section id="slide" class="mui-slider">
                     <div class="mui-slider-group mui-slider-loop">
                         <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-                        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner4.png"></a></div>
+                        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner2.png"></a></div>
                         <div class="mui-slider-item"><a href="#"><img src="./images/banner1.png"></a></div>
                         <div class="mui-slider-item"><a href="#"><img src="./images/banner2.png"></a></div>
-                        <div class="mui-slider-item"><a href="#"><img src="./images/banner3.png"></a></div>
-                        <div class="mui-slider-item"><a href="#"><img src="./images/banner4.png"></a></div>
                         <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
                         <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner1.png"></a></div>
                     </div>
@@ -46,20 +44,109 @@
                     <div class="mui-slider-indicator">
                         <div class="mui-indicator mui-active"></div>
                         <div class="mui-indicator"></div>
-                        <div class="mui-indicator"></div>
-                        <div class="mui-indicator"></div>
                     </div>
                 </section>
                 <section id="detail-list">
-                    
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell product-name">
+                            名称：<strong>
+                                李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋
+                            </strong>
+                        </li>
+                        <li class="mui-table-view-cell product-price">
+                            价格：<strong>￥1111.11</strong> <del>￥2222.22</del>
+                        </li>
+                        <li class="mui-table-view-cell product-size">
+                            尺码： <span>
+                                <button type="button" class="mui-btn">35</button>
+                                <button type="button" class="mui-btn">35</button>
+                                <button type="button" class="mui-btn">35</button>
+                            </span>
+                        </li>
+                        <li class="mui-table-view-cell product-num">
+                            数量：
+                            <div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='100'>
+                                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                <input class="mui-numbox-input" type="number" />
+                                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                            </div>
+                            剩余<span>20</span>件
+                        </li>
+                    </ul>
                 </section>
             </div>
         </div>
     </main>
     <!-- 页尾区域 -->
     <footer id="footer">
-
+        <div class="mui-row">
+            <div class="mui-col-xs-2">
+                <a href="cart.html" class="fa fa-shopping-cart"></a>
+            </div>
+            <div class="mui-col-xs-5">
+                <button type="button" class="mui-btn mui-btn-danger btn-add-cart">加入购物车</button>
+            </div>
+            <div class="mui-col-xs-5">
+                <button type="button" class="mui-btn mui-btn-warning">立即购买</button>
+            </div>
+        </div>
     </footer>
+
+    <!-- 商品详情的模板引擎 -->
+    <script id="detailTpl" type="text/html">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!-- 轮播图 -->
+                <section id="slide" class="mui-slider">
+                    <div class="mui-slider-group mui-slider-loop">
+                        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[pic.length-1].picAddr}}"></a></div>
+                        <!-- 遍历pic图片数组 -->
+                        {{each pic value i}}
+                            <div class="mui-slider-item"><a href="#"><img src="{{value.picAddr}}"></a></div>
+                        {{/each}}
+                        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[0].picAddr}}"></a></div>
+                    </div>
+                    <!-- 小圆点 -->
+                    <div class="mui-slider-indicator">
+                        {{each pic value i}}
+                            <!-- 默认第一个有选中的样式, 如果i == 0 返回 mui-active 否则返回空 -->
+                            <div class="mui-indicator {{i == 0 ? 'mui-active' : ''}}"></div>
+                        {{/each}}
+                    </div>
+                </section>
+                <section id="detail-list">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell product-name">
+                            名称：<strong>{{proName}}</strong>
+                        </li>
+                        <li class="mui-table-view-cell product-price">
+                            价格：<strong>￥{{price}}</strong> <del>￥{{oldPrice}}</del>
+                        </li>
+                        <li class="mui-table-view-cell product-size">
+                            尺码： <span>
+                            {{each size value i}}
+                                <!-- 这里value就是size, 绑定到标签的自定义属性上, 方便加入购物车时获取 -->
+                                <!-- 默认第一个有选中的样式, 如果i == 0 返回 mui-btn-warning 否则返回空 -->
+                                <button type="button" class="mui-btn {{i == 0 ? 'mui-btn-warning' : ''}}" data-size="{{value}}">{{value}}</button>
+                            {{/each}}
+                            </span>
+                        </li>
+                        <li class="mui-table-view-cell product-num">
+                            数量：
+                            <div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='{{num}}'>
+                                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                <input class="mui-numbox-input" type="number" />
+                                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                            </div>
+                            剩余<span>{{num}}</span>件
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </script>
 
     <script src="./lib/mui/js/mui.js"></script>
     <!-- zepto,移动端的JQ -->

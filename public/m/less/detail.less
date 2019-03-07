@@ -1,2 +1,47 @@
 @import './base.less';
 
+#main {
+    #detail-list {
+        .product-price {
+            strong {
+                color: red;
+            }
+
+            del {
+                color: #ccc;
+            }
+        }
+
+        .product-size {
+            // 设置左边文字和右边的按钮居中对齐
+            line-height: .33rem;
+
+            .mui-btn {
+                margin-bottom: .05rem;
+            }
+        }
+        .mui-table-view-cell:after {
+            left: 0;
+        }
+    }
+}
+
+#footer {
+    background-color: #ccc;
+    .mui-row {
+        .mui-col-xs-2 {
+            text-align: center;
+            a {
+                font-size: .2rem;
+                color: #666;
+                line-height: .45rem;
+            }
+        }
+        .mui-col-xs-5 {
+            padding: .06rem .06rem .06rem 0;
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录中心</title>
+    <!-- MUI框架 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/login.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <h4>登录中心</h4>
+        </div>
+        <div class="right">
+            <a href="index.html" class="fa fa-home"></a>
+        </div>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label>用户名</label>
+            <input type="text" class="mui-input-clear username" placeholder="请输入用户名" value="itcast">
+            </div>
+            <div class="mui-input-row">
+                <label>密码</label>
+                <input type="password" class="mui-input-password password" placeholder="请输入密码" value="111111">
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary btn-login" >登录</button>
+                <button type="button" class="mui-btn mui-btn-danger btn-register">注册</button>
+            </div>
+        </form>
+    </main>
+    <!-- 页尾区域 -->
+    <footer id="footer">
+        <ul class="mui-row">
+            <li class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- zepto,移动端的JQ -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

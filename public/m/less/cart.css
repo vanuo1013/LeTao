@@ -120,35 +120,60 @@ img {
 #footer ul a.active {
   color: orange;
 }
-#main #detail-list .product-price strong {
-  color: red;
+#main {
+  padding-bottom: .8rem;
 }
-#main #detail-list .product-price del {
-  color: #ccc;
+#main .cart-list li a {
+  display: flex;
 }
-#main #detail-list .product-size {
-  line-height: .33rem;
-}
-#main #detail-list .product-size .mui-btn {
-  margin-bottom: .05rem;
-}
-#main #detail-list .mui-table-view-cell:after {
-  left: 0;
-}
-#footer {
-  background-color: #ccc;
-}
-#footer .mui-row .mui-col-xs-2 {
+#main .cart-list li a .left {
+  width: .8rem;
   text-align: center;
 }
-#footer .mui-row .mui-col-xs-2 a {
-  font-size: .2rem;
-  color: #666;
-  line-height: .45rem;
-}
-#footer .mui-row .mui-col-xs-5 {
-  padding: .06rem .06rem .06rem 0;
-}
-#footer .mui-row .mui-col-xs-5 button {
+#main .cart-list li a .left img {
   width: 100%;
+}
+#main .cart-list li a .left input {
+  position: static;
+  width: .2rem;
+  height: .2rem;
+}
+#main .cart-list li a .left input::before {
+  font-size: .2rem;
+}
+#main .cart-list li a .right {
+  flex: 1;
+  padding: 0 .1rem;
+  line-height: .26rem;
+}
+#main .cart-list li a .right .product-name {
+  color: #000;
+}
+#main .cart-list li a .right .product-price {
+  color: #666;
+}
+#main .cart-list li a .right .product-price strong {
+  color: red;
+}
+#main .cart-list li a .right .product-params {
+  display: flex;
+  justify-content: space-between;
+}
+#main .cart-list li a:not(.mui-btn) {
+  white-space: normal;
+}
+#order {
+  position: fixed;
+  bottom: .45rem;
+  width: 100%;
+  height: .35rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  line-height: .35rem;
+}
+#order .order-count {
+  color: red;
+  font-weight: bold;
+  margin-left: .2rem;
 }

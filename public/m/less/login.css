@@ -120,35 +120,13 @@ img {
 #footer ul a.active {
   color: orange;
 }
-#main #detail-list .product-price strong {
-  color: red;
+#main .mui-input-group label {
+  line-height: normal;
 }
-#main #detail-list .product-price del {
-  color: #ccc;
+#main .mui-input-group input {
+  padding-left: .1rem;
+  font-size: .14rem;
 }
-#main #detail-list .product-size {
-  line-height: .33rem;
-}
-#main #detail-list .product-size .mui-btn {
-  margin-bottom: .05rem;
-}
-#main #detail-list .mui-table-view-cell:after {
+#main .mui-input-group .mui-input-row:after {
   left: 0;
-}
-#footer {
-  background-color: #ccc;
-}
-#footer .mui-row .mui-col-xs-2 {
-  text-align: center;
-}
-#footer .mui-row .mui-col-xs-2 a {
-  font-size: .2rem;
-  color: #666;
-  line-height: .45rem;
-}
-#footer .mui-row .mui-col-xs-5 {
-  padding: .06rem .06rem .06rem 0;
-}
-#footer .mui-row .mui-col-xs-5 button {
-  width: 100%;
 }

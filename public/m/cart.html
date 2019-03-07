@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <!-- MUI框架 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/cart.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <h4>购物车</h4>
+        </div>
+        <div class="right">
+            <a href="#" class="fa fa-refresh"></a>
+        </div>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <ul class="mui-table-view cart-list">
+                    <li class="mui-table-view-cell">
+                        <!-- mui-navigate-right 显示右侧箭头的类名 -->
+                        <!-- mui-slider-handle 是让左边能够支持滑动的类名 -->
+                        <a href="#" class="mui-navigate-right mui-slider-handle">
+                            <div class="left">
+                                <img src="./images/product.jpg" alt="">
+                                <!-- 复选框要包裹在一个类名为mui-checkbox的父元素里面 -->
+                                <div class="mui-checkbox">
+                                    <input name="checkbox" value="Item 1" type="checkbox">
+                                </div>
+                            </div>
+                            <div class="right">
+                                <p class="product-name">
+                                    李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋
+                                </p>
+                                <p class="product-price">
+                                    <strong>￥1111.11</strong>
+                                    <del>￥2222.22</del>
+                                </p>
+                                <div class="product-params">
+                                    <div class="size">
+                                        鞋码: <span>50</span>
+                                    </div>
+                                    <div class="num">
+                                        数量: x<span>1</span>双
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- mui-slider-right 默认隐藏 滑动的时候会显示出来的类名 -->
+                        <div class="mui-slider-right mui-disabled">
+                            <a class="mui-btn mui-btn-blue">编辑</a>
+                            <a class="mui-btn mui-btn-red">删除</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- 订单区域 -->
+    <div id="order">
+        <div class="order-count">
+            合计： ￥<span>0.00</span>
+        </div>
+        <button type="button" class="mui-btn mui-btn-danger">去结算</button>
+    </div>
+    <!-- 页尾区域 -->
+    <footer id="footer">
+        <ul class="mui-row">
+            <li class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="cart.html" class="active">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- 查询购物车商品的模板引擎 -->
+    <script id="queryCartTpl" type="text/html">
+        {{each list value i}}
+            <li class="mui-table-view-cell">
+                <!-- mui-navigate-right 显示右侧箭头的类名 -->
+                <!-- mui-slider-handle 是让左边能够支持滑动的类名 -->
+                <a href="#" class="mui-navigate-right mui-slider-handle">
+                    <div class="left">
+                        <img src="./images/product.jpg" alt="">
+                        <!-- 复选框要包裹在一个类名为mui-checkbox的父元素里面 -->
+                        <div class="mui-checkbox">
+                            <input name="checkbox" value="Item 1" type="checkbox">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p class="product-name">{{value.proName}}</p>
+                        <p class="product-price">
+                            <strong>￥{{value.price}}</strong>
+                            <del>￥{{value.oldPrice}}</del>
+                        </p>
+                        <div class="product-params">
+                            <div class="size">
+                                鞋码: <span>{{value.size}}</span>
+                            </div>
+                            <div class="num">
+                                数量: x<span>1</span>双
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!-- mui-slider-right 默认隐藏 滑动的时候会显示出来的类名 -->
+                <div class="mui-slider-right mui-disabled">
+                    <a class="mui-btn mui-btn-blue">编辑</a>
+                    <a class="mui-btn mui-btn-red">删除</a>
+                </div>
+            </li>
+        {{/each}}
+    </script>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- zepto,移动端的JQ -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+
+</html>
