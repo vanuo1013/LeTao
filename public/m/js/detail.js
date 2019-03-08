@@ -45,7 +45,6 @@ $(function () {
     $('.btn-add-cart').on('tap',function () {
         // 通过自定义属性获取当前选择尺码
         var size = $('.mui-btn.mui-btn-warning').data('size');
-        console.log(size);
         // 通过mui自己的方法获取选择的商品数量
         var num = mui('.mui-numbox').numbox().getValue();
         // ajax发请求加入购物车的接口

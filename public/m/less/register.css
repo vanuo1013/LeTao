@@ -130,9 +130,16 @@ img {
 #main .mui-input-group .mui-input-row:after {
   left: 0;
 }
-#main .mui-table-view-cell a {
-  display: block;
+#main .btn-get-vcode {
+  position: absolute;
+  right: 0;
+  width: auto;
+  height: 40px;
 }
-#main .mui-table-view-cell::after {
-  left: 0;
+#main .mui-button-row {
+  padding: .1rem;
+  height: auto;
+}
+#main .mui-button-row .btn-register {
+  width: 100%;
 }

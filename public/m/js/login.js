@@ -42,11 +42,6 @@ $(function () {
         })
     })
 
-    // 给注册按钮添加点击事件, 跳转去注册页面
-    $('.btn-register').on('tap',function () {
-        location = 'register.html'
-    })
-
     // 封装获取url参数的函数(正则版)
     function getQueryString(name) {
         var reg = new RegExp("[^\?&]?" + encodeURI(name) + "=[^&]+");

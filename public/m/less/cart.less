@@ -56,6 +56,9 @@
                     white-space: normal;
                 }
             }
+            &::after {
+                left: 0;
+            }
         }
     }
 }
@@ -75,5 +78,22 @@
         color:red;
         font-weight: bold;
         margin-left: .2rem;
+    }
+}
+
+// 编辑弹出框样式
+.mui-popup-inner {
+    padding: 0.15rem 0.1rem;
+    li {
+        padding: 0.11rem 0;
+        span{
+            line-height: .33rem;
+            button{
+                margin-bottom: 0.05rem;
+            }
+        }
+        &::after {
+            left: 0;
+        }
     }
 }
